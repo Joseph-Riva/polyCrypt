@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Polynomial.h"
+#include "gtest/gtest.h"
 
 using namespace std;
 
-int main(){
-    cout << "hi" << '\n';
-    cout << add() << '\n';
+TEST (PolynomialTest, addExample) {
+    EXPECT_EQ (1, add());
 }
