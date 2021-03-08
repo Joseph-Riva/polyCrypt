@@ -24,5 +24,7 @@ add_compile_options(-fmessage-length=80 -fno-diagnostics-show-option
     -Wold-style-cast -Wshadow -Wunused-const-variable=1
     -Wzero-as-null-pointer-constant)
 
-add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreducablePolynomial.cc)
+add_executable(main src/main.cc)
+add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreduciblePolynomial.cc)
+target_link_libraries(main Polynomial)
 

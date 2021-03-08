@@ -2,15 +2,20 @@
 #define POLYCRYPT_BASEPOLYNOMIAL_H
 
 #include <iostream>
+#include <string>
 
 class BasePolynomial{
     public:
-        BasePolynomial(int degree);
-        virtual ~BasePolynomial() = 0;
+        explicit BasePolynomial(int val);
+        virtual ~BasePolynomial() = default;
         int degree() const;
+        int value() const;
     private:
-        int degree;
+        int val;
+        int _degree;
+
+        int calculateDegree();
 };
-std::ostream& operator<<(ostream& os, const BasePolynomial& b);
+std::ostream& operator<<(std::ostream& os, const BasePolynomial& b);
 
 #endif //POLYCRYPT_BASEPOLYNOMIAL_H
