@@ -1,5 +1,5 @@
 #ifndef POLYNOMIAL_H_INCLUDED
 #define POLYNOMIAL_H_INCLUDED
-int add();
+
 
 #endif //POLYNOMIAL_H_INCLUDED

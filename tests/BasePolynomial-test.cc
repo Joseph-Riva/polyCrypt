@@ -5,5 +5,5 @@
 using namespace std;
 
 TEST (PolynomialTest, addExample) {
-    EXPECT_EQ (1, add());
+    EXPECT_EQ (1, );
 }

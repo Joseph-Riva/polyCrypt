@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+/tests/CMakeFiles/
+/Makefile
+/polyCrypt.cbp
+/tests/Makefile
+/cmake_install.cmake
+/CMakeCache.txt
+/CMakeFiles/
