@@ -30,6 +30,9 @@
 *.exe
 *.out
 *.app
+/bin
+
+#CMake Output Files
 /tests/CMakeFiles/
 /Makefile
 /polyCrypt.cbp
