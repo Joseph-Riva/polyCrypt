@@ -6,7 +6,7 @@ include_directories(include/)
 
 # subdirectories
 add_subdirectory(tests)
-add_subdirectory(lib/googletest)
+add_subdirectory(lib)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 # C++17 standard

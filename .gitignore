@@ -38,3 +38,11 @@
 /CMakeCache.txt
 /CMakeFiles/
 /tests/cmake_install.cmake
+
+# google test stuff
+/lib/googletest-build
+/lib/googletest-download
+/lib/googletest-src
+/lib/CMakeFiles
+/lib/Makefile
+/lib/cmake_install.cmake
