@@ -10,7 +10,7 @@ class BasePolynomial{
         virtual ~BasePolynomial() = default;
         int degree() const;
         int value() const;
-    private:
+    protected:
         int val;
         int _degree;
 

@@ -9,6 +9,7 @@
 #include <unordered_map>
 
 class IrreduciblePolynomial: public BasePolynomial{
+    friend class Polynomial;
     public:
         explicit IrreduciblePolynomial(int f_num);
         ~IrreduciblePolynomial() override = default;
