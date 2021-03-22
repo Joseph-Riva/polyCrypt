@@ -9,7 +9,6 @@ TEST (PolynomialConstruct, positivedegree) {
     EXPECT_EQ (2, p.degree());
     EXPECT_EQ (4, p.value());
     EXPECT_EQ(0b111, p.get_field().value());
-    cout << p;
 }
 TEST (PolynomialConstruct, invalidField) {
     try{

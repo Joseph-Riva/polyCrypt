@@ -28,5 +28,7 @@ TEST (BasePolynomialValue, values){
 
 TEST (BasePolynomialPrint, values){
     BasePolynomial b1(0b111001);
-    cout << b1;
+    ostringstream out;
+    out << b1;
+    EXPECT_EQ(out.str(),  " x^5 + x^4 + x^3 + x^0 ");
 }

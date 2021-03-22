@@ -7,7 +7,6 @@ using namespace std;
 TEST (IrreduciblePolynomialConstruct, validField) {
     IrreduciblePolynomial p(4);
     EXPECT_EQ (7, p.value());
-    cout << p;
 }
 
 TEST (IrreduciblePolynomialConstruct, invalidField) {
