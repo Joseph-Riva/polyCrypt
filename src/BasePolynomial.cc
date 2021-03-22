@@ -16,11 +16,11 @@ int BasePolynomial::value() const {
     return val;
 }
 
-BasePolynomial::BasePolynomial(int value): val(value), _degree(calculateDegree()){}
+BasePolynomial::BasePolynomial(int value): val(value), _degree(calculateDegree(this->val)){}
 
 
-int BasePolynomial::calculateDegree() {
-    auto bs = bitset<32>(val);
+int BasePolynomial::calculateDegree(int value) const{
+    auto bs = bitset<32>(value);
     for(int i = bs.size(); i >= 0; i--){
         if(bs[i] == 1){
             return i;

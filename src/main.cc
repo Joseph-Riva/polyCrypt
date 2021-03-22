@@ -15,5 +15,6 @@ int main(){
     cout << "created a polynomial with a field size of 4 p1: " << p1 << '\n';
     cout << "created a polynomial with a field size of 4 p2: " << p2 << '\n';
     cout << "p1 + p2 = " << p1+p2 << '\n';
+
 }
 

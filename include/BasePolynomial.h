@@ -14,7 +14,7 @@ class BasePolynomial{
         int val;
         int _degree;
 
-        int calculateDegree();
+        int calculateDegree(int val) const;
 };
 std::ostream& operator<<(std::ostream& os, const BasePolynomial& b);
 

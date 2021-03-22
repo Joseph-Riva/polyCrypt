@@ -10,7 +10,8 @@ class Polynomial: public BasePolynomial{
         ~Polynomial() override = default;
         const IrreduciblePolynomial& get_field() const;
         Polynomial operator+(const Polynomial&);
-        //Polynomial operator%(const IrreduciblePolynomial&);
+        Polynomial operator%(const IrreduciblePolynomial&);
+        Polynomial operator*(const Polynomial&);
     private:
         IrreduciblePolynomial field;
 };

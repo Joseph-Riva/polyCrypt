@@ -42,10 +42,10 @@ TEST (PolynomialAdd, differentField){
     }
 }
 
-/*TEST(PolynomialMod, sameField){
+TEST(PolynomialMod, sameField){
     Polynomial p1(0b1111000, 16);
     IrreduciblePolynomial r(16);
     Polynomial result = p1 % r;
     EXPECT_EQ(0b101, result.value());
-}*/
+}
 

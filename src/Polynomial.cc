@@ -1,5 +1,5 @@
 #include "Polynomial.h"
-
+#include <bitset>
 using namespace std;
 
 Polynomial::Polynomial(int value, int field_size) : BasePolynomial(value), field(field_size){}
@@ -16,18 +16,26 @@ Polynomial Polynomial::operator+(const Polynomial & other) {
     return Polynomial(new_val, field.field_size);
 }
 
-/*
+
 Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 
     int cur_val = value();
-    Polynomial cur = *this;
-    while(degree() >= other.degree()){
-        cout << "current remainder: " << cur_val << '\n';
-        int degree_diff = other.degree() - degree();
-        //int other_val = other.value() << degree_diff;
-        //cur +=
-    }
-    return Polynomial(0, field.field_size);
-}
-*/
+    const int other_val = other.value();
+    
+    int cur_degree = degree();
+    const int other_degree = other.degree();
 
+    while(cur_degree >= other_degree){
+        int degree_diff = cur_degree - other_degree;
+        
+        cur_val = cur_val ^ (other_val<<degree_diff);
+
+        cur_degree = calculateDegree(cur_val);
+    }
+    return Polynomial(cur_val, field.field_size);
+}
+
+Polynomial Polynomial::operator*(const Polynomial& other){
+    product = 0;
+    bitset<auto> other_str = bitset<>
+}
