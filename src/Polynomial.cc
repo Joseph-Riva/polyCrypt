@@ -36,6 +36,11 @@ Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 }
 
 Polynomial Polynomial::operator*(const Polynomial& other){
-    product = 0;
-    bitset<auto> other_str = bitset<>
+    int product = 0;
+	cout << product << '\n';
+    auto other_str = bitset<32>(other.value());	
+    for(size_t i = 0; i < other_str.size(); i++){
+        cout << other_str[i] << ' ';
+    }
+	return Polynomial(0, field.field_size);
 }

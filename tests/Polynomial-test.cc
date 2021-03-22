@@ -49,3 +49,9 @@ TEST(PolynomialMod, sameField){
     EXPECT_EQ(0b101, result.value());
 }
 
+TEST(PolynomialMultiply, sameField){	
+    Polynomial p1(0b100, 4);
+    Polynomial p2(0b010, 4);
+    Polynomial p3 = p1* p2;
+    EXPECT_EQ(0b110, p3.value());
+}
