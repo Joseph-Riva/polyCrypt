@@ -37,7 +37,7 @@ Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 
 Polynomial Polynomial::operator*(const Polynomial& other){
     int product = 0;
-    auto other_str = bitset<32>(other.value());
+    bitset<32> other_str = bitset<32>(other.value());
 	int other_degree = other.degree();
     for(int i = 0; i <= other_degree; i++){
         if(other_str[other_degree-i] == 1){
