@@ -50,8 +50,8 @@ TEST(PolynomialMod, sameField){
 }
 
 TEST(PolynomialMultiply, sameField){	
-    Polynomial p1(0b100, 4);
-    Polynomial p2(0b010, 4);
-    Polynomial p3 = p1* p2;
-    EXPECT_EQ(0b110, p3.value());
+    Polynomial p1(0b1000, 16);
+    Polynomial p2(0b1111, 16);
+    Polynomial p3 = p1*p2;
+    EXPECT_EQ(0b101, p3.value());
 }

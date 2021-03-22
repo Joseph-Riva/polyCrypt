@@ -37,10 +37,14 @@ Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 
 Polynomial Polynomial::operator*(const Polynomial& other){
     int product = 0;
-	cout << product << '\n';
-    auto other_str = bitset<32>(other.value());	
+    auto other_str = bitset<32>(other.value());
+	int other_degree = other.degree();
     for(size_t i = 0; i < other_str.size(); i++){
-        cout << other_str[i] << ' ';
+        if(other_str[i] == 1){
+			int shift = other_degree - 1 - i;
+			int shifted_val = value() << shift;
+			product ^= shifted_val;
+		}
     }
-	return Polynomial(0, field.field_size);
+	return Polynomial(product, field.field_size);
 }
