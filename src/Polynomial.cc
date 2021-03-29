@@ -48,3 +48,15 @@ Polynomial Polynomial::operator*(const Polynomial& other){
     }
 	return Polynomial(product, field.field_size) % this->field;
 }
+
+Polynomial Polynomial::pow(int power){
+    return pow_mod(*this, power, this->field, Polynomial(0b1, field.field_size));
+}
+Polynomial Polynomial::pow_mod(Polynomial base, int exp, IrreduciblePolynomial p, Polynomial b){
+    if(exp==1){
+        return base*b % p;
+    }else if(exp%2==0){
+        return pow_mod(base*base % p, exp/2, p, b);
+    }
+    return pow_mod(base*base % p, (exp-1)/2, p, base*b % p);
+}
