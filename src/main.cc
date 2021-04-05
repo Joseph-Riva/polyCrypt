@@ -29,6 +29,14 @@ void polyMod(){
     cout << "p1 % r = " << result << '\n';
     
 }
+void polyPow(){
+    Polynomial p1(0b1000, 16);
+    cout << "created a polynomial with a field size of 16 p1: " << p1 << '\n';
+    IrreduciblePolynomial r(16);
+    cout << "created an Irreducable Polynomial with a field size of 16: " << r << '\n';
+    Polynomial result = p1.pow(2);
+    cout << "p1^2 = " << result << '\n';
+}
 int main(){
     IrreduciblePolynomial r(4);
     cout << "created an irreducible polynomial with field size of " << 4 << ": " << r << '\n';
@@ -40,5 +48,7 @@ int main(){
     polyMult();
     cout << '\n';
     polyMod();
+    cout << '\n';
+    polyPow();
 }
 
