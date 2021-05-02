@@ -52,6 +52,11 @@ Polynomial Polynomial::operator*(const Polynomial& other){
 Polynomial Polynomial::pow(int power){
     return pow_mod(*this, power, this->field, Polynomial(0b1, field.field_size));
 }
+
+Polynomial Polynomial::inverse(){
+    int order = field.field_size - 1;
+    return pow(order-1);
+}
 Polynomial Polynomial::pow_mod(Polynomial base, int exp, IrreduciblePolynomial p, Polynomial b){
     if(exp==1){
         return base*b % p;

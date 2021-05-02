@@ -60,3 +60,7 @@ TEST(PolynomialPowMod, sameField){
     Polynomial p3 = p1.pow(2);
     EXPECT_EQ(0b1111,p3.value());
 }
+
+TEST(PolynomialInverse, test1){
+    
+}
