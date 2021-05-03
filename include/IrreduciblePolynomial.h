@@ -16,6 +16,7 @@ class IrreduciblePolynomial: public BasePolynomial{
         ~IrreduciblePolynomial() override = default;
     private:
         long long field_size;
+        // found some polynomials for this table at: https://www.hpl.hp.com/techreports/98/HPL-98-135.pdf 
         inline static const std::unordered_map<long long, long long> polynomials = {
                 {4,    0b111},        //x^2 + x + 1
                 {8,    0b1101},       //x^3 + x^2 + 1
@@ -26,6 +27,7 @@ class IrreduciblePolynomial: public BasePolynomial{
                 {256,  0b100011101},  //x^8 + x^4 + x^3 + x^2 + 1
                 {512,  0b1000010001}, //x^9 + x^4 + 1
                 {1024, 0b10000001001}, //x^10 + x^3 + 1
+                {std::pow(2, 30), (1L<<30) | 0b11LL}, //x^30 + x + 1
                 {std::pow(2, 50), (1L<<50) | 0b11101LL} //x^50 + x^4 + x^3 + x^2 + 1
         };
         long long get_val(long long f_size) const;

@@ -78,3 +78,10 @@ TEST(PolynomialInverse, test1){
     Polynomial product = p1*p1_inverse;
     EXPECT_EQ(0b1, product.value());
 }
+
+TEST(PolynomialInverse, testLong){
+    Polynomial p1(1L << 25, pow(2, 30));
+    Polynomial p1_inverse = p1.inverse();
+    cout << "p1 inverse: " << p1_inverse.value() << '\n';
+    EXPECT_EQ(1, (p1*p1_inverse).value());
+}

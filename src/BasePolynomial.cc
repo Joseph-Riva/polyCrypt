@@ -20,9 +20,9 @@ BasePolynomial::BasePolynomial(long long value): val(value), _degree(calculateDe
 
 
 long long BasePolynomial::calculateDegree(long long value) const{
-    auto bs = bitset<32>(value);
-    for(int i = bs.size(); i >= 0; i--){
-        if(bs[i] == 1){
+    const auto bs = bitset<64>(value);
+    for(int i = bs.size()-1; i >= 0; i--){
+        if(int(bs[i]) == 1){
             return i;
         }
     }

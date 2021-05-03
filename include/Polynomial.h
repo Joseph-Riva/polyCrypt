@@ -13,9 +13,9 @@ class Polynomial: public BasePolynomial{
         Polynomial operator%(const IrreduciblePolynomial&);
         Polynomial operator*(const Polynomial&);
         Polynomial inverse();
-        Polynomial pow(int power);
+        Polynomial pow(long long power);
     private:
-        Polynomial pow_mod(Polynomial base, int exp, IrreduciblePolynomial p, Polynomial b);
+        Polynomial pow_mod(Polynomial base, long long exp, IrreduciblePolynomial p, Polynomial b);
         IrreduciblePolynomial field;
 };
 #endif //POLYNOMIAL_H_INCLUDED
