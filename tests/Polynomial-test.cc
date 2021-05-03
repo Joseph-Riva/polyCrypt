@@ -62,5 +62,8 @@ TEST(PolynomialPowMod, sameField){
 }
 
 TEST(PolynomialInverse, test1){
-    
+    Polynomial p1(0b10100101, 16);
+    Polynomial p1_inverse = p1.inverse();
+    Polynomial product = p1*p1_inverse;
+    EXPECT_EQ(0b1, product.value());
 }

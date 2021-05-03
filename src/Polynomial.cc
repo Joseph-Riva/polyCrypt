@@ -2,7 +2,9 @@
 #include <bitset>
 using namespace std;
 
-Polynomial::Polynomial(int value, int field_size) : BasePolynomial(value), field(field_size){}
+Polynomial::Polynomial(int value, int field_size) : BasePolynomial(value), field(field_size){
+    //this->val = (*this % field).value();
+}
 
 const IrreduciblePolynomial &Polynomial::get_field() const{
     return field;
