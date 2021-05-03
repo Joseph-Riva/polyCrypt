@@ -3,8 +3,11 @@
 using namespace std;
 
 Polynomial::Polynomial(long long value, long long field_size) : BasePolynomial(value), field(field_size){
-    //this->val = (*this % field).value();
+    if(this->degree() >= field.degree()){
+        this->val = (*this % field).value();
+    }
 }
+    
 
 const IrreduciblePolynomial &Polynomial::get_field() const{
     return field;
@@ -15,7 +18,7 @@ Polynomial Polynomial::operator+(const Polynomial & other) {
         throw runtime_error("Cannot add polynomials with different field sizes.");
     }
     long long new_val = val ^ other.val;
-    return Polynomial(new_val, field.field_size);
+    return Polynomial(new_val, field.field_size) % field;
 }
 
 

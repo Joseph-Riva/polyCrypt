@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Polynomial.h"
 #include "gtest/gtest.h"
 
@@ -7,7 +8,7 @@ using namespace std;
 TEST (PolynomialConstruct, positivedegree) {
     Polynomial p(0b100, 4);
     EXPECT_EQ (2, p.degree());
-    EXPECT_EQ (4, p.value());
+    EXPECT_EQ (3, p.value());
     EXPECT_EQ(0b111, p.get_field().value());
 }
 TEST (PolynomialConstruct, invalidField) {
@@ -21,11 +22,21 @@ TEST (PolynomialConstruct, invalidField) {
     }
 }
 
+TEST (PolynomialConstruct, biggerThanInt){
+    Polynomial p1(1L << 42, pow(2, 50));
+    EXPECT_EQ(1L << 42, p1.value());
+    EXPECT_EQ(1LL << 50 | 0b11101LL, p1.get_field().value());
+}
+
+TEST (PolynomialConstruct, biggerThanFieldDegree){
+    Polynomial p1(0b100000, 4);
+}
+
 TEST (PolynomialAdd, sameDegree){
     Polynomial p1(0b100, 4);
     Polynomial p2(0b010, 4);
     Polynomial p3 = p1 + p2;
-    EXPECT_EQ(0b110, p3.value());
+    EXPECT_EQ(0b1, p3.value());
 }
 
 TEST (PolynomialAdd, differentField){
