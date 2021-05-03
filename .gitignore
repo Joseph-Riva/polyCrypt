@@ -33,6 +33,7 @@
 /bin
 
 #CMake Output Files
+/build
 /tests/CMakeFiles/
 /Makefile
 /polyCrypt.cbp
@@ -46,6 +47,7 @@
 /lib/googletest-build
 /lib/googletest-download
 /lib/googletest-src
+/lib/googlebenchmark-*
 /lib/CMakeFiles
 /lib/Makefile
 /lib/cmake_install.cmake
