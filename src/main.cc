@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "IrreduciblePolynomial.h"
 #include "Polynomial.h"
 
@@ -37,6 +38,12 @@ void polyPow(){
     Polynomial result = p1.pow(2);
     cout << "p1^2 = " << result << '\n';
 }
+
+void polyInverse(){
+    Polynomial p1(0b1000, pow(2, 30));
+    Polynomial result = p1.inverse();
+    cout << "p1 inverse: " << result << '\n';
+}
 int main(){
     IrreduciblePolynomial r(4);
     cout << "created an irreducible polynomial with field size of " << 4 << ": " << r << '\n';
@@ -50,5 +57,7 @@ int main(){
     polyMod();
     cout << '\n';
     polyPow();
+    cout << '\n';
+    polyInverse();
 }
 
