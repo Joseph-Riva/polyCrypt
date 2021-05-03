@@ -8,9 +8,9 @@
 
 using namespace std;
 
-IrreduciblePolynomial::IrreduciblePolynomial(int f_num) : BasePolynomial(get_val(f_num)), field_size(f_num) {}
+IrreduciblePolynomial::IrreduciblePolynomial(long long f_num) : BasePolynomial(get_val(f_num)), field_size(f_num) {}
 
-int IrreduciblePolynomial::get_val(int f_size) const {
+long long IrreduciblePolynomial::get_val(long long f_size) const {
     try{
         return polynomials.at(f_size);
     }catch(out_of_range& err){

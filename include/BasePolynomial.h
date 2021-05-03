@@ -6,15 +6,15 @@
 
 class BasePolynomial{
     public:
-        explicit BasePolynomial(int val);
+        explicit BasePolynomial(long long val);
         virtual ~BasePolynomial() = default;
-        int degree() const;
-        int value() const;
+        long long degree() const;
+        long long value() const;
     protected:
-        int val;
-        int _degree;
+        long long val;
+        long long _degree;
 
-        int calculateDegree(int val) const;
+        long long calculateDegree(long long val) const;
 };
 std::ostream& operator<<(std::ostream& os, const BasePolynomial& b);
 

@@ -6,7 +6,7 @@
 
 class Polynomial: public BasePolynomial{
     public:
-        explicit Polynomial(int value, int field_size);
+        explicit Polynomial(long long value, long long field_size);
         ~Polynomial() override = default;
         const IrreduciblePolynomial& get_field() const;
         Polynomial operator+(const Polynomial&);

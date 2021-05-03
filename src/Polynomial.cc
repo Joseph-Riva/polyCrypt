@@ -2,7 +2,7 @@
 #include <bitset>
 using namespace std;
 
-Polynomial::Polynomial(int value, int field_size) : BasePolynomial(value), field(field_size){
+Polynomial::Polynomial(long long value, long long field_size) : BasePolynomial(value), field(field_size){
     //this->val = (*this % field).value();
 }
 
@@ -14,21 +14,21 @@ Polynomial Polynomial::operator+(const Polynomial & other) {
     if(this->field.field_size != other.field.field_size){
         throw runtime_error("Cannot add polynomials with different field sizes.");
     }
-    int new_val = val ^ other.val;
+    long long new_val = val ^ other.val;
     return Polynomial(new_val, field.field_size);
 }
 
 
 Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 
-    int cur_val = value();
-    const int other_val = other.value();
+    long long cur_val = value();
+    const long long other_val = other.value();
     
-    int cur_degree = degree();
-    const int other_degree = other.degree();
+    long long cur_degree = degree();
+    const long long other_degree = other.degree();
 
     while(cur_degree >= other_degree){
-        int degree_diff = cur_degree - other_degree;
+        long long degree_diff = cur_degree - other_degree;
         
         cur_val = cur_val ^ (other_val<<degree_diff);
 
@@ -38,13 +38,13 @@ Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 }
 
 Polynomial Polynomial::operator*(const Polynomial& other){
-    int product = 0;
+    long long product = 0;
     bitset<32> other_str = bitset<32>(other.value());
-	int other_degree = other.degree();
+	long long other_degree = other.degree();
     for(int i = 0; i <= other_degree; i++){
         if(other_str[other_degree-i] == 1){
-			int shift = other_degree - i;
-			int shifted_val = value() << shift;
+			long long shift = other_degree - i;
+			long long shifted_val = value() << shift;
 			product ^= shifted_val;
 		}
     }
@@ -56,7 +56,7 @@ Polynomial Polynomial::pow(int power){
 }
 
 Polynomial Polynomial::inverse(){
-    int order = field.field_size - 1;
+    long long order = field.field_size - 1;
     return pow(order-1);
 }
 Polynomial Polynomial::pow_mod(Polynomial base, int exp, IrreduciblePolynomial p, Polynomial b){

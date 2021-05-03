@@ -8,18 +8,18 @@
 
 using namespace std;
 
-int BasePolynomial::degree() const {
+long long BasePolynomial::degree() const {
     return _degree;
 }
 
-int BasePolynomial::value() const {
+long long BasePolynomial::value() const {
     return val;
 }
 
-BasePolynomial::BasePolynomial(int value): val(value), _degree(calculateDegree(this->val)){}
+BasePolynomial::BasePolynomial(long long value): val(value), _degree(calculateDegree(this->val)){}
 
 
-int BasePolynomial::calculateDegree(int value) const{
+long long BasePolynomial::calculateDegree(long long value) const{
     auto bs = bitset<32>(value);
     for(int i = bs.size(); i >= 0; i--){
         if(bs[i] == 1){
