@@ -42,7 +42,7 @@ Polynomial Polynomial::operator%(const IrreduciblePolynomial & other) {
 
 Polynomial Polynomial::operator*(const Polynomial& other){
     long long product = 0;
-    bitset<32> other_str = bitset<32>(other.value());
+    bitset<64> other_str = bitset<64>(other.value());
 	long long other_degree = other.degree();
     for(int i = 0; i <= other_degree; i++){
         if(other_str[other_degree-i] == 1){
@@ -63,7 +63,6 @@ Polynomial Polynomial::inverse(){
     return pow(order-1);
 }
 Polynomial Polynomial::pow_mod(Polynomial base, long long exp, IrreduciblePolynomial p, Polynomial b){
-    //cout << "pm(" << base.value() << ", " << exp << ", " << p.value() << ", " << b.value() << '\n';
     if(exp==1LL){
         return base*b % p;
     }else if(exp%2==0LL){

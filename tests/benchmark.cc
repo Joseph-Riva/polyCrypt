@@ -46,6 +46,6 @@ static void BM_pow_mod(benchmark::State& state){
   }
 }
 
-BENCHMARK(BM_pow_mod)->Unit(benchmark::kMillisecond);
+BENCHMARK(BM_pow_mod);
 
 BENCHMARK_MAIN();
