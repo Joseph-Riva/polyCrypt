@@ -13,6 +13,8 @@ class Polynomial: public BasePolynomial{
         Polynomial operator%(const IrreduciblePolynomial&);
         Polynomial operator*(const Polynomial&);
         Polynomial inverse();
+        Polynomial sqrt();
+        Polynomial additiveInverse();
         Polynomial pow(long long power);
     private:
         Polynomial pow_mod(Polynomial base, long long exp, IrreduciblePolynomial p, Polynomial b);

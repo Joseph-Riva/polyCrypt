@@ -84,3 +84,15 @@ TEST(PolynomialInverse, testLong){
     Polynomial p1_inverse = p1.inverse();
     EXPECT_EQ(1, (p1*p1_inverse).value());
 }
+
+TEST(PolynomialSqrt, testSqrt){
+    Polynomial p1(0b1010, 32);
+    Polynomial sqrtP = p1.sqrt();
+    EXPECT_EQ(p1.value(), (sqrtP*sqrtP).value());
+}
+
+TEST(PolynomialAdditiveInverse, test1){
+    Polynomial p1(0b10101, 32);
+    Polynomial addInvP = p1.additiveInverse();
+    EXPECT_EQ(0, (p1 + addInvP).value());
+}

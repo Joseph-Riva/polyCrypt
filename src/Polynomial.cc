@@ -1,5 +1,7 @@
 #include "Polynomial.h"
 #include <bitset>
+#include <cmath>
+
 using namespace std;
 
 Polynomial::Polynomial(long long value, long long field_size) : BasePolynomial(value), field(field_size){
@@ -62,6 +64,16 @@ Polynomial Polynomial::inverse(){
     long long order = field.field_size - 1;
     return pow(order-1);
 }
+Polynomial Polynomial::additiveInverse(){
+    /* given polynomial y over a field, F, computes -y mod F*/
+    return Polynomial(*this);
+}
+
+Polynomial Polynomial::sqrt(){
+    long long sqrt_pow = std::pow(2, log2(field.field_size) - 1);
+    return pow(sqrt_pow);
+}
+
 Polynomial Polynomial::pow_mod(Polynomial base, long long exp, IrreduciblePolynomial p, Polynomial b){
     if(exp==1LL){
         return base*b % p;
