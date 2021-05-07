@@ -1,5 +1,6 @@
 #include <benchmark/benchmark.h>
 #include "Polynomial.h"
+#include "EllipticCurve.h"
 #include <iostream>
 #include <cmath>
 
@@ -28,7 +29,7 @@ static void BM_inverses_2_30(benchmark::State& state){
   long f_size = std::pow(2, 30);
   //long f_size = 1024;
   for(auto _ : state){
-    for(int i = 0; i < f_size/2; i++){
+    for(long i = 0; i < f_size/2; i++){
         Polynomial cur(i, f_size);
         cur.inverse();
     }
@@ -47,5 +48,18 @@ static void BM_pow_mod(benchmark::State& state){
 }
 
 BENCHMARK(BM_pow_mod);
+
+
+static void BM_EllipticCurves(benchmark::State& state){
+  long f_size = std::pow(2, 30);
+  //long f_size = 1024;
+  Polynomial p1(std::pow(2,30)-459, std::pow(2,30));
+  for(auto _ : state){
+    p1.pow(125467);
+  }
+}
+
+//BENCHMARK(BM_pow_mod);
+
 
 BENCHMARK_MAIN();

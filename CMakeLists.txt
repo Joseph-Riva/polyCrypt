@@ -37,5 +37,6 @@ endif(NOT APPLE)
 
 add_executable(main src/main.cc)
 add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreduciblePolynomial.cc)
-target_link_libraries(main Polynomial)
+add_library(EllipticCurve src/EllipticCurve.cc)
+target_link_libraries(main PUBLIC Polynomial EllipticCurve)
 
