@@ -47,12 +47,7 @@ void polyInverse(){
 }
 
 void ecPrint(){
-    auto points = getECPointSet();
-
-    cout << "num points: " << points.size() << '\n';
-    for(auto point : points){
-        cout << point << '\n';
-    }
+    getECPointSet();
 }
 
 int main(){

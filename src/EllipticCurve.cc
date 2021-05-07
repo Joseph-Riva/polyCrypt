@@ -2,14 +2,16 @@
 #include "Polynomial.h"
 #include <iostream>
 #include <set>
+#include <vector>
 #include <memory>
+#include <cassert>
+#include <utility>
 
 using namespace std;
 
 
-set<Polynomial, PolynomialComp>& getECPointSet(){
-    unique_ptr<set<Polynomial, PolynomialComp>> points = make_unique<set<Polynomial, PolynomialComp>>();
-
+void getECPointSet(){
+    
     Polynomial a(0b10101, 256);
     Polynomial b(0b10111, 256);
     //EC - y^2 = x^2 + a*x + b
@@ -20,10 +22,9 @@ set<Polynomial, PolynomialComp>& getECPointSet(){
         Polynomial cur(i, 256);
         Polynomial y_2 = cur.pow(2) + a*cur + b;
         Polynomial y = y_2.sqrt();
-        points->insert(y);
+        cout << "x: " << cur.value() << ", " << y.value() << '\n';
+        assert(y.pow(2).value() == y_2.value());
     }
-
-    return *points; 
 }
 
 
