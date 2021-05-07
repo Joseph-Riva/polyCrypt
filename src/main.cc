@@ -46,6 +46,15 @@ void polyInverse(){
     cout << "p1 inverse: " << result << '\n';
 }
 
+void ecPrint(){
+    auto points = getECPointSet();
+
+    cout << "num points: " << points.size() << '\n';
+    for(auto point : points){
+        cout << point << '\n';
+    }
+}
+
 int main(){
     IrreduciblePolynomial r(4);
     cout << "created an irreducible polynomial with field size of " << 4 << ": " << r << '\n';
@@ -62,11 +71,6 @@ int main(){
     cout << '\n';
     polyInverse();
     cout << '\n';
-    auto points = getECPointSet();
-
-    cout << "num points: " << points.size();
-    for(auto point : points){
-        cout << point << '\n';
-    }
+    ecPrint();
 }
 

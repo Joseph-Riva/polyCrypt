@@ -52,14 +52,13 @@ BENCHMARK(BM_pow_mod);
 
 static void BM_EllipticCurves(benchmark::State& state){
   long f_size = std::pow(2, 30);
-  //long f_size = 1024;
-  Polynomial p1(std::pow(2,30)-459, std::pow(2,30));
+ 
   for(auto _ : state){
-    p1.pow(125467);
+      getAllECPoints(f_size);
   }
 }
 
-//BENCHMARK(BM_pow_mod);
+BENCHMARK(BM_EllipticCurves)->Unit(benchmark::kMillisecond);
 
 
 BENCHMARK_MAIN();

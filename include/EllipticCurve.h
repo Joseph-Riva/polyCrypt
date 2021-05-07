@@ -11,4 +11,5 @@ struct PolynomialComp {
 
 std::set<Polynomial, PolynomialComp>& getECPointSet();
 
+void getAllECPoints(long long);
 #endif
