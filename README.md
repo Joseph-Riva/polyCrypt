@@ -2,6 +2,8 @@
 ## About
 Implementing Polynomials over Finite Fields for Cryptography and Beyond. This library aims to allow for relatively fast operations on 
 polynomials in Characteristic two over Finite Extension Fields.
+
+Further Documentation can be found in the `documentation` folder in this directory.
 ## Installation
 Please download this repository and then you can execute:
 `cmake . && make`
