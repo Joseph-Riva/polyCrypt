@@ -20,7 +20,8 @@ to generate the MakeFile for this project and compile it. While developing you m
 ├── README.md
 ├── bin
 │   ├── main
-│   └── test
+│   └── polyTest
+|   └── speedTest
 ├── cmake_install.cmake
 ├── include
 │   ├── BasePolynomial.h
@@ -51,3 +52,4 @@ to generate the MakeFile for this project and compile it. While developing you m
 all executables that get generated are put in the `bin/` directory. You will find two important ones:
 * `./bin/test` - runs the gTest suite for all test files in the `tests/` directory(source is in `tests/main.cc`)
 * `./bin/main` - runs an example file(source is in `src/main.cc`)
+* `./bin/speedTest` - runs an speed test(source is in `src/benchmark.cc`)

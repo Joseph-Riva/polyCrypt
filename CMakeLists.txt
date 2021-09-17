@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.10)
 
 # set compiler
 set(CMAKE_CXX_COMPILER /usr/bin/g++)
@@ -13,17 +13,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # include directories
 include_directories(include/)
 
-# subdirectories
-add_subdirectory(tests)
-add_subdirectory(lib)
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
 # C++17 standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Using -Wall is required:
-add_compile_options(-Wall -Wextra -Wpedantic)
+add_compile_options(-Wall -Wextra -Wpedantic -std=c++17 -g -O3)
  
 # Optional super-strict mode:
 if(NOT APPLE)
@@ -39,4 +34,9 @@ add_executable(main src/main.cc)
 add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreduciblePolynomial.cc)
 add_library(EllipticCurve src/EllipticCurve.cc)
 target_link_libraries(main PUBLIC Polynomial EllipticCurve)
+
+# subdirectories
+add_subdirectory(tests)
+add_subdirectory(lib)
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
