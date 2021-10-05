@@ -51,7 +51,7 @@ BENCHMARK(BM_pow_mod);
 
 
 static void BM_EllipticCurves(benchmark::State& state){
-  long f_size = std::pow(2, 30);
+  long f_size = std::pow(2, 16);
  
   for(auto _ : state){
       getAllECPoints(f_size);

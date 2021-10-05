@@ -14,7 +14,7 @@ void getECPointSet(){
     
     Polynomial a(0b10101, 256);
     Polynomial b(0b10111, 256);
-    //EC - y^2 = x^2 + a*x + b
+    //EC -> y^2 = x^2 + a*x + b
     cout << "Get elliptic curve elements in F_256" << '\n';
     cout << "working with elliptic curve: " << "y^2 = X^2 + " << a << "* X + " << b << "mod" << IrreduciblePolynomial(256) << "where X is an element of the Finite Field" << '\n';
 
