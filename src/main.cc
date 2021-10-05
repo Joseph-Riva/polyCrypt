@@ -50,6 +50,18 @@ void ecPrint(){
     getECPointSet();
 }
 
+void allElements(){
+    int k = 2;
+    long f_size = std::pow(2, k);
+    
+    cout << "all elements in field of size " << f_size << '\n';
+    //generate all elements < 2^k
+    for(int i = 0; i < f_size; ++i){
+        Polynomial p(i,f_size);
+        std::cout << p << '\n';
+    }
+}
+
 int main(){
     IrreduciblePolynomial r(4);
     cout << "created an irreducible polynomial with field size of " << 4 << ": " << r << '\n';
@@ -67,5 +79,7 @@ int main(){
     polyInverse();
     cout << '\n';
     ecPrint();
+    cout << '\n';
+    allElements();
 }
 
