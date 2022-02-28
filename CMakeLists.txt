@@ -19,16 +19,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Using -Wall is required:
 add_compile_options(-Wall -Wextra -Wpedantic -std=c++17 -g -O3)
- 
-# Optional super-strict mode:
-if(NOT APPLE)
-		add_compile_options(-fmessage-length=80 -fno-diagnostics-show-option
-			-fstack-protector-all -g -O3 -std=c++17 -Walloc-zero -Walloca
-			-Wctor-dtor-privacy -Wduplicated-cond -Wduplicated-branches
-			-Werror -Wextra-semi -Wfatal-errors -Winit-self -Wlogical-op
-			-Wold-style-cast -Wshadow -Wunused-const-variable=1
-			-Wzero-as-null-pointer-constant)
-endif(NOT APPLE)
 
 add_executable(main src/main.cc)
 add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreduciblePolynomial.cc)
