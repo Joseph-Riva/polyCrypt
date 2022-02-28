@@ -25,7 +25,7 @@ if(NOT APPLE)
 		add_compile_options(-fmessage-length=80 -fno-diagnostics-show-option
 			-fstack-protector-all -g -O3 -std=c++17 -Walloc-zero -Walloca
 			-Wctor-dtor-privacy -Wduplicated-cond -Wduplicated-branches
-			-Werror -Wextra-semi -Wfatal-errors -Winit-self -Wlogical-op
+			-Werror -Wextra-semi -Winit-self -Wlogical-op
 			-Wold-style-cast -Wshadow -Wunused-const-variable=1
 			-Wzero-as-null-pointer-constant)
 endif(NOT APPLE)
@@ -36,7 +36,7 @@ add_library(EllipticCurve src/EllipticCurve.cc)
 target_link_libraries(main PUBLIC Polynomial EllipticCurve)
 
 add_executable(crc src/CRC/crc.cc)
-target_link_libraries(main PUBLIC Polynomial)
+target_link_libraries(crc PUBLIC Polynomial)
 
 # subdirectories
 add_subdirectory(tests)

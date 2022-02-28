@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include "Polynomial.h"
 #include "IrreduciblePolynomial.h"
 
-const int BYTES = 8;
+//const int BYTES = 8;
 
 using namespace std;
 
@@ -19,7 +20,7 @@ uint32_t crc32(const char buffer[], size_t buf_length){
 
     q = buffer + buf_length;
 	for (p = buffer; p < q; p++) { //iterate over buffer one byte at a time
-		Polynomial current_byte((long long) *p, field);
+		Polynomial current_byte( static_cast<long long>(*p), field);
 		Polynomial shifted(crc >> 8, field); // shift CRC over one byte
         Polynomial bottom_eight(crc & 0xff, field);
 
@@ -30,7 +31,7 @@ uint32_t crc32(const char buffer[], size_t buf_length){
     return ~crc;
 }
 
-int main(int argc, char** argv){
+int main(int /*argc*/, char** /*argv*/){
     // ifstream file(argv[1], ios::binary);
     // if(!file){
     //     cerr << "failed to open file." << '\n';
