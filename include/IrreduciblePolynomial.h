@@ -13,6 +13,7 @@ class IrreduciblePolynomial: public BasePolynomial{
     friend class Polynomial;
     public:
         explicit IrreduciblePolynomial(long long f_num);
+        IrreduciblePolynomial(long long polynomial, long long field_num);
         ~IrreduciblePolynomial() override = default;
     private:
         long long field_size;

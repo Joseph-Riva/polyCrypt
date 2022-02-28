@@ -9,6 +9,18 @@ Polynomial::Polynomial(long long value, long long field_size) : BasePolynomial(v
         this->val = (*this % field).value();
     }
 }
+
+Polynomial::Polynomial(long long value, long long polynomial, long long field_size) : BasePolynomial(value), field(polynomial, field_size){
+    if(this->degree() >= field.degree()){
+        this->val = (*this % field).value();
+    }
+}
+
+Polynomial::Polynomial(long long value, IrreduciblePolynomial f) : BasePolynomial(value), field(f){
+    if(this->degree() >= field.degree()){
+        this->val = (*this % field).value();
+    }
+}
     
 
 const IrreduciblePolynomial &Polynomial::get_field() const{

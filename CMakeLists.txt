@@ -35,6 +35,9 @@ add_library(Polynomial src/Polynomial.cc src/BasePolynomial.cc src/IrreduciblePo
 add_library(EllipticCurve src/EllipticCurve.cc)
 target_link_libraries(main PUBLIC Polynomial EllipticCurve)
 
+add_executable(crc src/CRC/crc.cc)
+target_link_libraries(main PUBLIC Polynomial)
+
 # subdirectories
 add_subdirectory(tests)
 add_subdirectory(lib)
