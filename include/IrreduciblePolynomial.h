@@ -30,6 +30,7 @@ class IrreduciblePolynomial: public BasePolynomial{
                 {1024, 0b10000001001}, //x^10 + x^3 + 1
                 {std::pow(2, 16), (1L<<16) | 0b101011LL}, //x^16 + x^5 + x^3 + x + 1
                 {std::pow(2, 30), (1L<<30) | 0b11LL}, //x^30 + x + 1
+                {std::pow(2,32), 0xEDB88320},
                 {std::pow(2, 50), (1L<<50) | 0b11101LL} //x^50 + x^4 + x^3 + x^2 + 1
         };
         long long get_val(long long f_size) const;

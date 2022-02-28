@@ -10,6 +10,12 @@ TEST (IrreduciblePolynomialConstruct, validField) {
     EXPECT_EQ(2, p.degree());
 }
 
+TEST (IrreduciblePolynomialConstruct, secondConstructor) {
+    IrreduciblePolynomial p(0b1100001, 64);
+    EXPECT_EQ (0b1100001, p.value());
+    EXPECT_EQ(6, p.degree());
+}
+
 TEST (IrreduciblePolynomialConstruct, invalidField) {
     try{
         IrreduciblePolynomial p(17);

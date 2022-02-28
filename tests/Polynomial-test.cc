@@ -28,6 +28,19 @@ TEST (PolynomialConstruct, biggerThanInt){
     EXPECT_EQ(1LL << 50 | 0b11101LL, p1.get_field().value());
 }
 
+TEST (PolynomialConstruct, ConstructorWithValue){
+    Polynomial p1(1L << 20, 0xEDB88320, pow(2, 32));
+    EXPECT_EQ(1L << 20, p1.value());
+    //EXPECT_EQ(1LL << 50 | 0b11101LL, p1.get_field().value());
+}
+
+TEST (PolynomialConstruct, ConstructorWithIrreduciblePolynomial){
+    IrreduciblePolynomial irr(0xEDB88320, pow(2, 32));
+    Polynomial p1(1L << 20, irr);
+    EXPECT_EQ(1L << 20, p1.value());
+    //EXPECT_EQ(1LL << 50 | 0b11101LL, p1.get_field().value());
+}
+
 TEST (PolynomialConstruct, biggerThanFieldDegree){
     Polynomial p1(0b100000, 4);
 }
