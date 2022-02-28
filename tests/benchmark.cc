@@ -40,7 +40,7 @@ static void BM_inverses_2_30(benchmark::State& state){
 //BENCHMARK(BM_inverses_2_30)->Unit(benchmark::kMillisecond);
 
 static void BM_pow_mod(benchmark::State& state){
-  long f_size = std::pow(2, 30);
+  //long f_size = std::pow(2, 30);
   //long f_size = 1024;
   Polynomial p1(std::pow(2,30)-459, std::pow(2,30));
   for(auto _ : state){
